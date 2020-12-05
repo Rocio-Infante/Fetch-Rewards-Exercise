@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import dataApi from './data/dataApi';
+import ItemCard from './components/ItemCard';
 
 
 const App = () => {
@@ -14,7 +14,6 @@ const [error, setError] = useState('');
       .then((responseData) => {
         setData(responseData)
         setLoading(false)
-        console.log("response", responseData[0].id)
       })
       .catch(e => {
         setLoading(false);
@@ -32,7 +31,7 @@ const [error, setError] = useState('');
 
   return (
     <div>
-
+      <ItemCard data={data}/>
     </div>
   )
 };
