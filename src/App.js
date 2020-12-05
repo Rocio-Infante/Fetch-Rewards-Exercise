@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import ItemCard from './components/ItemCard';
 
 
+// ------------------------------ Main App Component  ------------------------------- //
+
 const App = () => {
 const [data, setData] = useState([]);
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState('');
+
+// Fetching data on page load
 
   useEffect( () => {
     setLoading(true)
@@ -28,6 +32,8 @@ const [error, setError] = useState('');
   if (error) {
     return <p>ERROR: {error}</p>;
   }
+
+// Page render
 
   return (
     <div>
