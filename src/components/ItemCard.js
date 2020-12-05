@@ -4,6 +4,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
+// ------------------------------ Styling ------------------------------- //
+
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -21,13 +23,33 @@ const useStyles = makeStyles({
   },
 });
 
+
+
+// ------------------------------ Cards for Items ------------------------------- //
+
 const ItemCard = ({ data }) => {
   const classes = useStyles(); 
 
+// Filter data by removing items that don't have a name
+  const filteredData = ( arr ) => {
+    let required = arr.filter(( obj ) => {
+      return obj.name;
+    });
+    return required;
+  };
+
+  // Passing in data from state to the filterData function
+  let filteredItems = filteredData(data);
+
+  // Sorting filteredItems by listId and name
+  filteredItems.sort((a, b) => {
+    return a.listId - b.listId ||a.name.localeCompare(b.name, 'en', { numeric: true })
+  });
+
   return (
     <>
-    {data.map(( item, i ) => (
-    <Card className={classes.root}>
+    {filteredItems.map(( item, i ) => (
+    <Card className={classes.root} key={`item_${i}`}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           ListId: {item.listId}
