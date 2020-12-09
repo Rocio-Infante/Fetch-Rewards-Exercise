@@ -45,5 +45,5 @@ npm run cypress:run
 ####
 
 - Search functionality
-- Improved Styling
+- Improved styling
 - Improved loading screen

@@ -50,15 +50,15 @@ const ItemCard = ({ data }) => {
   return (
     <div className={classes.cardContainer}>
     {filteredItems.map(( item, i ) => (
-      <Card className={classes.root} key={`item_${i}`}>
+      <Card cy-data="card" className={classes.root} key={`item_${i}`}>
         <CardContent>
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
+          <Typography cy-data="listId" className={classes.title} color="textSecondary" gutterBottom>
             ListId: {item.listId}
           </Typography>
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
+          <Typography cy-data="title" className={classes.title} color="textSecondary" gutterBottom>
             Name: {item.name}
           </Typography>
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
+          <Typography cy-data="id" className={classes.title} color="textSecondary" gutterBottom>
             Id: {item.id}
           </Typography>
         </CardContent>
