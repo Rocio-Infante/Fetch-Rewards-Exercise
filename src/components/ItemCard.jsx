@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     maxWidth: 240,
     flexGrow: 1,
     margin: 10,
+    padding: 0,
   },
   cardContainer: {
     display: "flex",

@@ -36,7 +36,10 @@ const [error, setError] = useState('');
 
   return (
     <div>
-      <h1 style={{fontSize: 45, textAlign: "center", paddingTop: 25}}>Fetching Items for Fetch Rewards</h1>
+      <h1 style={{fontSize: 45, textAlign: "center", paddingTop: 25, color: "rgb(53,56,57)"}}
+      >
+      Fetching Items for Fetch Rewards
+      </h1>
       <ItemCard data={data}/>
     </div>
   )
