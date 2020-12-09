@@ -8,18 +8,18 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    maxWidth: 240,
+    flexGrow: 1,
+    margin: 10,
   },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
+  cardContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    paddingTop: 55,
   },
   title: {
     fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
   },
 });
 
@@ -43,27 +43,27 @@ const ItemCard = ({ data }) => {
 
   // Sorting filteredItems by listId and name
   filteredItems.sort((a, b) => {
-    return a.listId - b.listId ||a.name.localeCompare(b.name, 'en', { numeric: true })
+    return a.listId - b.listId || a.name.localeCompare(b.name, 'en', { numeric: true })
   });
 
   return (
-    <>
+    <div className={classes.cardContainer}>
     {filteredItems.map(( item, i ) => (
-    <Card className={classes.root} key={`item_${i}`}>
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          ListId: {item.listId}
-        </Typography>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Name: {item.name}
-        </Typography>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Id: {item.id}
-        </Typography>
-      </CardContent>
-    </Card>
+      <Card className={classes.root} key={`item_${i}`}>
+        <CardContent>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            ListId: {item.listId}
+          </Typography>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            Name: {item.name}
+          </Typography>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            Id: {item.id}
+          </Typography>
+        </CardContent>
+      </Card>
     ))}
-    </>
+    </div>
   );
 };
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ItemCard from './components/ItemCard';
 
-
-// ------------------------------ Main App Component  ------------------------------- //
+// ------------------------------ Main App Component ------------------------------- //
 
 const App = () => {
 const [data, setData] = useState([]);
@@ -37,6 +36,7 @@ const [error, setError] = useState('');
 
   return (
     <div>
+      <h1 style={{fontSize: 45, textAlign: "center", paddingTop: 25}}>Fetching Items for Fetch Rewards</h1>
       <ItemCard data={data}/>
     </div>
   )
